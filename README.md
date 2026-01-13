@@ -20,26 +20,34 @@
 
 ## Google Colab에서 실행
 
-### 학습 실행
+### 1단계: 모델 학습
+`test_chamber.ipynb`를 실행하여 SAC 에이전트를 학습시킵니다.
+
+**중요**: 첫 번째 셀을 실행하면 Google Drive가 자동으로 마운트되고, 학습된 모델이 `/content/drive/MyDrive/smart_farm_models/`에 저장됩니다.
+
 ```python
+# Colab에서 실행
 # 1. 저장소 클론
 !git clone https://github.com/kaz264/test_chamber.git
 %cd test_chamber
 
-# 2. 필요한 패키지 설치
-!pip install gymnasium stable-baselines3 numpy shimmy matplotlib
-
-# 3. 노트북 실행
-# test_chamber.ipynb 파일을 열어서 실행
+# 2. test_chamber.ipynb 열기 및 실행
+# - Google Drive 마운트 (자동)
+# - 패키지 설치 (자동)
+# - 50,000 스텝 학습 진행
+# - 모델이 Google Drive에 저장됨
 ```
 
-### 학습된 모델 테스트
+### 2단계: 모델 테스트
 학습이 완료된 후 `test_model.ipynb`를 실행하여 다음을 테스트할 수 있습니다:
-- 시각화된 제어 성능 그래프
-- 다중 에피소드 통계 분석
-- 극단적인 초기 조건 테스트
-- 랜덤 정책과 성능 비교
-- 목표값 변경 시 적응력 테스트
+
+- **시각화된 제어 성능 그래프**: 온도/습도/액션 타임시리즈
+- **다중 에피소드 통계 분석**: 평균 보상, 오차, 수렴 시간
+- **극단적인 초기 조건 테스트**: 다양한 환경에서의 강건성
+- **랜덤 정책과 성능 비교**: 학습 효과 검증
+- **적응력 테스트**: 목표값 변경 시 추적 성능
+
+**참고**: 테스트 노트북도 자동으로 Google Drive에서 모델을 로드합니다.
 
 ## 로컬 실행
 
