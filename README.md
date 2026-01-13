@@ -20,17 +20,26 @@
 
 ## Google Colab에서 실행
 
+### 학습 실행
 ```python
 # 1. 저장소 클론
-!git clone https://github.com/YOUR_USERNAME/test_chamber.git
+!git clone https://github.com/kaz264/test_chamber.git
 %cd test_chamber
 
 # 2. 필요한 패키지 설치
-!pip install gymnasium stable-baselines3 numpy shimmy
+!pip install gymnasium stable-baselines3 numpy shimmy matplotlib
 
 # 3. 노트북 실행
 # test_chamber.ipynb 파일을 열어서 실행
 ```
+
+### 학습된 모델 테스트
+학습이 완료된 후 `test_model.ipynb`를 실행하여 다음을 테스트할 수 있습니다:
+- 시각화된 제어 성능 그래프
+- 다중 에피소드 통계 분석
+- 극단적인 초기 조건 테스트
+- 랜덤 정책과 성능 비교
+- 목표값 변경 시 적응력 테스트
 
 ## 로컬 실행
 
